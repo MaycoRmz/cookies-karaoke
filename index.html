@@ -12,7 +12,6 @@
       background: linear-gradient(135deg, #1a0033, #330066, #000033);
       color: white;
       text-align: center;
-      background-attachment: fixed;
     }
     .container { max-width: 900px; margin: 0 auto; padding: 20px; }
     
@@ -22,14 +21,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 30px #ff00ff, 0 0 50px #00ffff;
-      margin: 20px 0;
     }
     
     .neon { text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff; }
-    
     .tagline { font-size: 1.6rem; margin: 10px 0 30px; color: #ffff00; }
-    
-    .mic { font-size: 3rem; margin: 10px; }
     
     .section { margin: 45px 0; }
     
@@ -43,31 +38,31 @@
       margin: 20px;
     }
     
-    .cta {
-      font-size: 2.5rem;
-      color: #ffff00;
-      text-shadow: 0 0 25px yellow;
-      margin: 30px 0 10px;
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 700px;
     }
+    th, td {
+      padding: 12px;
+      border: 1px solid #00ffff;
+      text-align: left;
+    }
+    th { background: rgba(255,0,204,0.3); }
     
-    .number {
-      font-size: 3.2rem;
-      font-weight: bold;
-      color: #00ffcc;
-      text-shadow: 0 0 30px #00ffcc;
-      letter-spacing: 5px;
-    }
+    .cta { font-size: 2.5rem; color: #ffff00; text-shadow: 0 0 25px yellow; margin: 30px 0 10px; }
+    .number { font-size: 3.2rem; font-weight: bold; color: #00ffcc; text-shadow: 0 0 30px #00ffcc; letter-spacing: 5px; }
     
     form {
       background: rgba(0,0,0,0.6);
-      padding: 25px;
+      padding: 30px;
       border-radius: 15px;
-      max-width: 600px;
+      max-width: 650px;
       margin: 30px auto;
       border: 2px solid #ff00ff;
     }
-    
-    input, textarea, select {
+    input, select, textarea {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -75,7 +70,6 @@
       border: none;
       font-size: 1.1rem;
     }
-    
     button {
       background: linear-gradient(#ff00cc, #ff3399);
       color: white;
@@ -87,7 +81,6 @@
       margin-top: 15px;
       box-shadow: 0 0 20px #ff00ff;
     }
-    
     button:hover {
       transform: scale(1.08);
       box-shadow: 0 0 30px #ffff00;
@@ -99,7 +92,7 @@
     <h1>🎤 COOKIE’S KARAOKE 🎤</h1>
     <p class="tagline neon">Your Stage. Sing Loud. Own the Night.</p>
     
-    <p style="font-size:1.4rem;"><strong>🔥 Mobile Karaoke Serving Fort Dodge & Surrounding Areas 🔥</strong></p>
+    <p><strong>🔥 Mobile Karaoke Serving Fort Dodge & Surrounding Areas 🔥</strong></p>
 
     <div class="section">
       <p class="neon">🍪 Cookie brings the energy<br>
@@ -117,6 +110,17 @@
     </div>
 
     <div class="section">
+      <h2>Why Different Prices?</h2>
+      <p>Our pricing is based on event length, setup time, and travel distance.</p>
+      <table>
+        <tr><th>Package</th><th>Price</th><th>Best For</th><th>Details</th></tr>
+        <tr><td>Bar Night</td><td>$125</td><td>Bars & small venues</td><td>3 hours</td></tr>
+        <tr><td>Private Party</td><td>$250</td><td>Birthdays, house parties, reunions</td><td>4 hours + full setup</td></tr>
+        <tr><td>Special Events</td><td>$350+</td><td>Weddings, corporate, large parties</td><td>5+ hours, custom setup</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
       <p><strong>Perfect For:</strong><br>
       Bars • Birthdays • Reunions • Weddings • Corporate Events</p>
     </div>
@@ -126,23 +130,29 @@
       <p class="number">719-831-5884</p>
     </div>
 
-    <!-- Booking Form -->
+    <!-- Improved Booking Form -->
     <div class="section">
       <h2>🎵 Request a Booking</h2>
-      <form action="https://formspree.io/f/ginaramire88@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
+      <form action="https://formspree.io/f/ginaramirez88@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
         <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email">
-        <input type="date" name="date" required>
+        <input type="email" name="email" placeholder="Email Address">
+        <input type="date" name="event_date" required>
+        
         <select name="event_type" required>
-          <option value="">Select Event Type</option>
+          <option value="">What type of event?</option>
           <option value="Bar Night">Bar Night</option>
           <option value="Private Party">Private Party</option>
+          <option value="Birthday">Birthday Party</option>
           <option value="Wedding">Wedding</option>
           <option value="Corporate">Corporate Event</option>
+          <option value="Reunion">Reunion</option>
           <option value="Other">Other</option>
         </select>
-        <textarea name="message" rows="4" placeholder="Additional details (number of guests, song requests, etc.)"></textarea>
+        
+        <input type="number" name="guests" placeholder="Approx. Number of Guests">
+        <textarea name="message" rows="5" placeholder="Additional details: Preferred songs, start time, location, etc."></textarea>
+        
         <button type="submit">Submit Booking Request</button>
       </form>
     </div>
